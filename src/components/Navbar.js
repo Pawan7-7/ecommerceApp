@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 const Left = styled.div`
   flex: 1;
   display: flex;
+  text-align: center;
   align-items: center;
 `;
 
@@ -30,7 +31,7 @@ const SearchContainer = styled.div`
   margin-left: 25px;
 `;
 const Search = styled.input`
-  border: none;
+  border:none;
 `;
 const Center = styled.div`
   flex: 1;
@@ -47,7 +48,7 @@ const Right = styled.div`
   justify-content: flex-end;
 `;
 const MenuItem = styled.div`
-   font-size: 14px;
+  font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
 `;
@@ -59,9 +60,8 @@ const Navbar = () => {
         <Left>
           <Language>Eng</Language>
           <SearchContainer>
-            <SearchIcon style={{ color: "gray", fontSize: 16 }}/>
-            <Search/>
-
+            <SearchIcon style={{ color: "gray", fontSize: 16 }} />
+            <Search />
           </SearchContainer>
         </Left>
         <Center>
