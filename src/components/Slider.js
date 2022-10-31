@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
-import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
-import { sliderItems } from '../data';
+import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
+import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import React, { useState } from "react";
+import styled from "styled-components";
+import { sliderItems } from "../data";
 
-const Container =styled.div`
-width: 100%;
-height: 100vh;
-display: flex;
-position: relative;
-
-`
+const Container = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+`;
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
@@ -19,20 +18,20 @@ const Arrow = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
- position: absolute;
- top:0;
- bottom: 0;
-left: ${props=>props.direction==='left' && '10px'};
-right: ${props=>props.direction==='right' && '10px' };
-margin:auto;
-cursor:pointer;
-opacity: 0.5;
-z-index: 2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: ${(props) => props.direction === "left" && "10px"};
+  right: ${(props) => props.direction === "right" && "10px"};
+  margin: auto;
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 2;
 `;
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  transition: all 1.5s ease;
+  transition: all 2s ease-in-out;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
@@ -88,11 +87,11 @@ export const Slider = () => {
 
   return (
     <Container>
-        <Arrow direction='left' onClick={() => handleClick("left")}>
-            <ArrowCircleLeftOutlinedIcon/>
-        </Arrow>
+      <Arrow direction="left" onClick={() => handleClick("left")}>
+        <ArrowCircleLeftOutlinedIcon />
+      </Arrow>
 
-        <Wrapper slideIndex={slideIndex}>
+      <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
           <Slide bg={item.bg} key={item.id}>
             <ImgContainer>
@@ -106,9 +105,9 @@ export const Slider = () => {
           </Slide>
         ))}
       </Wrapper>
-        <Arrow direction='right' onClick={() => handleClick("right")}>
-            <ArrowCircleRightOutlinedIcon/>
-        </Arrow>
+      <Arrow direction="right" onClick={() => handleClick("right")}>
+        <ArrowCircleRightOutlinedIcon />
+      </Arrow>
     </Container>
-  )
-}
+  );
+};
